@@ -1,12 +1,20 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
+import { CatsRepository } from './cats/cat.repository';
 
-@Controller()
+@Controller('app')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(
+    private readonly appService: AppService,
+    private readonly catService: CatsRepository,
+  ) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('cats')
+  getAllCats() {
+    return this.catService.findAll();
+  }
+  @Post('cats')
+  createCat(@Body() dto) {
+    return this.catService.create(dto);
   }
 }
