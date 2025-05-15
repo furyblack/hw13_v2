@@ -3,14 +3,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserAccountsModule } from './moduls/user-accounts/user-accounts.module';
+import { TestingModule } from './moduls/testing/testing.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/nest', {
-      dbName: 'nest',
-    }),
+    MongooseModule.forRoot('mongodb://localhost/nest'),
     UserAccountsModule,
-    //MongooseModule.forFeature([{ name: Cat.name, schema: CatSchema }]),
+    TestingModule,
   ],
   controllers: [AppController],
   providers: [AppService],
