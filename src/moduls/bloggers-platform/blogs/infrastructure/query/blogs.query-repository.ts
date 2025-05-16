@@ -4,7 +4,7 @@ import { Blog, BlogModelType } from '../../domain/blog.entity';
 import { DeletionStatus } from '../../../../user-accounts/domain/user.entity';
 import { PaginatedViewDto } from '../../../../../core/dto/base.paginated.view-dto';
 import { FilterQuery } from 'mongoose';
-import { BlogsViewDto } from '../../view-dto/blogs.view-dto';
+import { BlogsViewDto } from '../../dto/view-dto/blogs.view-dto';
 import { GetBlogsQueryParams } from '../../api/input-dto/get-blogs-query-params.input-dto';
 
 @Injectable()

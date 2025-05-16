@@ -11,7 +11,7 @@ import {
   Query,
 } from '@nestjs/common';
 import { CreateBlogDomainDto } from '../domain/dto/create-blog.domain.dto';
-import { BlogsViewDto } from '../view-dto/blogs.view-dto';
+import { BlogsViewDto } from '../dto/view-dto/blogs.view-dto';
 import { GetBlogsQueryParams } from './input-dto/get-blogs-query-params.input-dto';
 import { PaginatedViewDto } from '../../../../core/dto/base.paginated.view-dto';
 import { BlogsQueryRepository } from '../infrastructure/query/blogs.query-repository';
