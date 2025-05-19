@@ -44,8 +44,8 @@ export class PostsService {
     dto: CreatePostDomainDto,
   ): Promise<string> {
     const blogExists = await this.blogModel.exists({
-      _id: dto.blogId,
-      description: DeletionStatus.NotDeleted,
+      _id: blogId,
+      deletionStatus: DeletionStatus.NotDeleted,
     });
     if (!blogExists) {
       throw new NotFoundException('Blog not found');

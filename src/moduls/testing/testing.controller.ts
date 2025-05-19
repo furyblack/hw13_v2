@@ -5,6 +5,10 @@ import {
   Blog,
   BlogModelType,
 } from '../bloggers-platform/blogs/domain/blog.entity';
+import {
+  Post,
+  PostModelType,
+} from '../bloggers-platform/posts/domain/post.entity';
 
 @Controller('testing')
 export class TestingController {
@@ -13,6 +17,8 @@ export class TestingController {
     private UserModel: UserModelType,
     @InjectModel(Blog.name)
     private BlogModel: BlogModelType,
+    @InjectModel(Post.name)
+    private PostModel: PostModelType,
   ) {}
 
   @Delete('all-data')
@@ -21,6 +27,7 @@ export class TestingController {
     await Promise.all([
       this.UserModel.deleteMany(),
       this.BlogModel.deleteMany(),
+      this.PostModel.deleteMany(),
     ]);
   }
 }
