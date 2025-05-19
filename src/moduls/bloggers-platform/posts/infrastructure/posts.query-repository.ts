@@ -28,7 +28,7 @@ export class PostsQueryRepository {
 
     return PostsViewDto.mapToView(post);
   }
-  async getAll(
+  async getAllPosts(
     query: GetPostsQueryParams,
   ): Promise<PaginatedViewDto<PostsViewDto[]>> {
     const filter: FilterQuery<Post> = {
